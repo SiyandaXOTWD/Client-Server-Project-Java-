@@ -26,7 +26,9 @@ The system uses a strict protocol sequence over TCP sockets. To avoid desynchron
         │ <── (BIN)  7. [Raw Byte Payload Stream] ─────────── │ (Switches to raw binary)
         v                                                     v
 
-##  📂 Repository Structure
+
+📂 Repository Structure
+
 ```text
 [Structure]
 ├── src/
@@ -46,9 +48,8 @@ The system uses a strict protocol sequence over TCP sockets. To avoid desynchron
     └── client/
         └── [Downloaded Files]         # Destination directory for completed transfers
 
----
 
-##  🛠️ Configuration & Setup
+🛠️ Configuration & Setup
 1. Server Environment Setup
 Before starting the server, ensure that your data/server/ directory is populated with your files and matching flat-file databases.
 - users.txt Configuration (Format: [username] [password])
@@ -63,9 +64,7 @@ Console Confirmation Output: Server connected on: 2018
 Step 2: Launch the Client Application
 Execute the main client driver class to start the JavaFX stage: java csc2b.client.Client
 
----
-
-## 🕹️ Application Workflow Guide
+🕹️ Application Workflow Guide
 Log In: Provide a matching credential set found in users.txt(Riri 123) and click LOG IN.
 Fetch Catalog: Click the LIST button to pull down the available index from the server.
 Stream Media File: * Identify the Numeric ID associated with your file (e.g., enter 4 to request Tshego-Garden.mp3).
