@@ -2,7 +2,6 @@
 
 [![Java Version](https://img.shields.io/badge/Java-17%2B-orange.svg)](https://www.oracle.com/java/)
 [![UI Framework](https://img.shields.io/badge/UI-JavaFX-blue.svg)](https://openjfx.io/)
-[![Protocol](https://img.shields.io/badge/Protocol-BUKA%20v1.0-green.svg)]()
 
 A robust, multi-threaded Client-Server system implemented in Java that handles user authentication, real-time directory listing, and multi-format media streaming. Using a custom application-layer protocol, the system cleanly transitions between plain-text command states and raw binary data pipelines to seamlessly transfer documents (`.pdf`) and audio tracks (`.mp3`).
 
