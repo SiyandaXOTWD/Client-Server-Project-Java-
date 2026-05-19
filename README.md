@@ -25,5 +25,6 @@ The system uses a strict protocol sequence over TCP sockets. To avoid desynchron
         │ <── (TEXT) 6. [File Size in Bytes]\n ────────────── │ (Sends file size line)
         │ <── (BIN)  7. [Raw Byte Payload Stream] ─────────── │ (Switches to raw binary)
         v                                                     v
----
+
 ## 🏗️ System Architecture & Data Flow
+'''text
