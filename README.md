@@ -26,5 +26,49 @@ The system uses a strict protocol sequence over TCP sockets. To avoid desynchron
         │ <── (BIN)  7. [Raw Byte Payload Stream] ─────────── │ (Switches to raw binary)
         v                                                     v
 
-## 🏗️ System Architecture & Data Flow
-'''text
+##  📂 Repository Structure
+```text
+[Structure]
+├── src/
+│   ├── ClientServer/
+│   │   ├── server/
+│   │   │   ├── Server.java            # Main server listener (Socket bind)
+│   │   │   └── ServerHandler.java       # Multi-threaded connection worker (Runnable)
+│   │   └── client/
+│   │       ├── Client.java            # Main client application entry point (JavaFX App)
+│   │       └── ClientPane.java    # JavaFX layout view and client event handlers
+│   
+└── data/
+    ├── server/
+    │   ├── users.txt                  # Authorized user credentials file
+    │   ├── PdfList.txt                # Numeric key to file mapping manifest
+    │   └── Tshego-Garden.mp3          # Host media assets folder
+    └── client/
+        └── [Downloaded Files]         # Destination directory for completed transfers
+
+---
+
+##  🛠️ Configuration & Setup
+1. Server Environment Setup
+Before starting the server, ensure that your data/server/ directory is populated with your files and matching flat-file databases.
+- users.txt Configuration (Format: [username] [password])
+ Example: Riri 123
+- PdfList.txt Configuration (Format: [ID] [Exact_Filename])
+ Example: 1 ihavedream.pdf
+
+2. Compiling and Execution
+Step 1: Start the Server Host
+Run the server package entry point to spin up the port listener: java ClientServer.server.Server
+Console Confirmation Output: Server connected on: 2018
+Step 2: Launch the Client Application
+Execute the main client driver class to start the JavaFX stage: java csc2b.client.Client
+
+---
+
+## 🕹️ Application Workflow Guide
+Log In: Provide a matching credential set found in users.txt(Riri 123) and click LOG IN.
+Fetch Catalog: Click the LIST button to pull down the available index from the server.
+Stream Media File: * Identify the Numeric ID associated with your file (e.g., enter 4 to request Tshego-Garden.mp3).
+Type the ID into the download text field and click DOWNLOAD.
+Once the byte transfer matches the server's tracking constraints, the system will update with:
+FILE DOWNLOADED: Tshego-Garden.mp3
