@@ -4,7 +4,7 @@
 [![UI Framework](https://img.shields.io/badge/UI-JavaFX-blue.svg)](https://openjfx.io/)
 [![Protocol](https://img.shields.io/badge/Protocol-BUKA%20v1.0-green.svg)]()
 
-A robust, multi-threaded Client-Server system implemented in Java that handles user authentication, real-time directory listing, and multi-format media streaming. Using a custom application-layer protocol (**BUKA**), the system cleanly transitions between plain-text command states and raw binary data pipelines to seamlessly transfer documents (`.pdf`) and audio tracks (`.mp3`).
+A robust, multi-threaded Client-Server system implemented in Java that handles user authentication, real-time directory listing, and multi-format media streaming. Using a custom application-layer protocol, the system cleanly transitions between plain-text command states and raw binary data pipelines to seamlessly transfer documents (`.pdf`) and audio tracks (`.mp3`).
 
 ---
 
@@ -25,3 +25,5 @@ The system uses a strict protocol sequence over TCP sockets. To avoid desynchron
         │ <── (TEXT) 6. [File Size in Bytes]\n ────────────── │ (Sends file size line)
         │ <── (BIN)  7. [Raw Byte Payload Stream] ─────────── │ (Switches to raw binary)
         v                                                     v
+---
+## 🏗️ System Architecture & Data Flow
